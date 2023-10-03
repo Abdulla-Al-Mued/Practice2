@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:jogajug/constants/variables.dart';
+import 'package:jogajug/provider/user_provider.dart';
+import 'package:provider/provider.dart';
 
-import 'HomePage.dart';
+import 'Pages/home/screens/HomePage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context)=>UserProvider())
+      ],
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Jogajug',
       theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        scaffoldBackgroundColor: Variables.backgroundColor,
+        colorScheme: ColorScheme.light(primary: Variables.backgroundColor),
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          iconTheme: IconThemeData(color: Variables.iconColor),
+        ),
       ),
+      //onGenerateRoute: (settings)=> generateRoute(settings),
       home:  HomePage(),
     );
   }
