@@ -275,6 +275,50 @@ class _PostCardState extends State<PostCard> {
                                       Material(
                                         color: Colors.transparent,
                                         child: InkWell(
+                                          borderRadius:
+                                          const BorderRadius.only(
+                                            bottomLeft:
+                                            Radius.circular(10),
+                                            bottomRight:
+                                            Radius.circular(10),
+                                          ),
+                                          onTap: () {},
+                                          child:  ListTile(
+                                            titleAlignment:
+                                            ListTileTitleAlignment
+                                                .center,
+                                            tileColor: Colors.white,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                              BorderRadius.only(
+                                                bottomLeft:
+                                                Radius.circular(10),
+                                                bottomRight:
+                                                Radius.circular(10),
+                                              ),
+                                            ),
+                                            minLeadingWidth: 10,
+                                            leading: Icon(
+                                              Icons.remove_circle,
+                                              size: 30,
+                                              color: Colors.black,
+                                            ),
+                                            title: Text(
+                                              "You're friends with ${widget.post.user.name}",
+                                              style: TextStyle(
+                                                color: Colors.black54,
+                                                fontSize: 14,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Material(
+                                        color: Colors.transparent,
+                                        child: InkWell(
                                           onTap: () {},
                                           borderRadius:
                                           const BorderRadius.only(
@@ -307,7 +351,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Hiển thị thêm',
+                                                  'Show more',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -319,7 +363,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 Text(
-                                                  'Bạn sẽ nhìn thấy nhiều bài viết tương tự hơn.',
+                                                  'More of your post will be like this.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -367,7 +411,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Ẩn bớt',
+                                                  'Show less',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -379,7 +423,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 Text(
-                                                  'Bạn sẽ nhìn thấy ít bài viết tương tự hơn.',
+                                                  'Fewer of your posts will be like this.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -435,7 +479,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Lưu bài viết',
+                                                  'Save post ',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -447,7 +491,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 Text(
-                                                  'Thêm vào danh sách các mục đã lưu.',
+                                                  'Add this to your saved items.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -493,7 +537,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Ẩn bài viết',
+                                                  'Hide post',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -505,7 +549,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 Text(
-                                                  'Ẩn bớt các bài viết tương tự.',
+                                                  'See fewer posts like this.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -537,7 +581,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 const Text(
-                                                  'Báo cáo bài viết',
+                                                  'Report post',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -549,7 +593,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 Text(
-                                                  'Chúng tôi sẽ không cho ${widget.post.user.name} biết ai đã báo cáo.',
+                                                  " We won't let ${widget.post.user.name} know who reported this.",
                                                   style: const TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -578,7 +622,7 @@ class _PostCardState extends State<PostCard> {
                                               size: 30,
                                             ),
                                             title: Text(
-                                              'Bật thông báo về bài viết này',
+                                              'Turn on notifications for this post',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight:
@@ -621,7 +665,7 @@ class _PostCardState extends State<PostCard> {
                                               size: 30,
                                             ),
                                             title: Text(
-                                              'Sao chép liên kết',
+                                              'Copy link',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight:
@@ -671,7 +715,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Thêm ${widget.post.user.name} vào mục Yêu thích',
+                                                  "Add ${widget.post.user.name} to Favourites",
                                                   style: const TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -683,7 +727,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 const Text(
-                                                  'Ưu tiên bài viết của họ trong Bảng tin',
+                                                  'Priorities her posts in News Feed.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -716,7 +760,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Tạm ẩn ${widget.post.user.name} trong 30 ngày.',
+                                                  "Snooze ${widget.post.user.name} for 30 days",
                                                   style: const TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -728,7 +772,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 const Text(
-                                                  'Tạm thời không nhìn thấy bài viết nữa.',
+                                                  'Temporarily stop seeing posts.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -779,7 +823,7 @@ class _PostCardState extends State<PostCard> {
                                                   .start,
                                               children: [
                                                 Text(
-                                                  'Bỏ theo dõi ${widget.post.user.name}',
+                                                  "Unfollow ${widget.post.user.name}",
                                                   style: const TextStyle(
                                                     color: Colors.black,
                                                     fontWeight:
@@ -791,7 +835,7 @@ class _PostCardState extends State<PostCard> {
                                                   height: 5,
                                                 ),
                                                 const Text(
-                                                  'Không xem bài viết của Trang này nữa.',
+                                                  'Stop seeing post but stay friends.',
                                                   style: TextStyle(
                                                     color: Colors.black54,
                                                     fontSize: 14,
@@ -805,6 +849,68 @@ class _PostCardState extends State<PostCard> {
                                       ),
                                       const SizedBox(
                                         height: 10,
+                                      ),
+                                      Material(
+                                        color: Colors.transparent,
+                                        child: InkWell(
+                                          borderRadius:
+                                          const BorderRadius.only(
+                                            bottomLeft:
+                                            Radius.circular(10),
+                                            bottomRight:
+                                            Radius.circular(10),
+                                          ),
+                                          onTap: () {},
+                                          child: ListTile(
+                                            shape:
+                                            const RoundedRectangleBorder(
+                                              borderRadius:
+                                              BorderRadius.only(
+                                                bottomLeft:
+                                                Radius.circular(10),
+                                                bottomRight:
+                                                Radius.circular(10),
+                                              ),
+                                            ),
+                                            tileColor: Colors.white,
+                                            minLeadingWidth: 10,
+                                            titleAlignment:
+                                            ListTileTitleAlignment
+                                                .center,
+                                            leading: Icon(
+                                              Icons.person_remove_alt_1,
+                                              size: 30,
+                                              color: Colors.black,
+                                            ),
+                                            title: Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment
+                                                  .start,
+                                              children: [
+                                                Text(
+                                                  "Block ${widget.post.user.name}'s profile",
+                                                  style: const TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight:
+                                                    FontWeight.w500,
+                                                    fontSize: 16,
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 5,
+                                                ),
+                                                const Text(
+                                                  "You won't be able to see or contact each other",
+                                                  style: TextStyle(
+                                                    color: Colors.black54,
+                                                    fontSize: 14,
+                                                    height: 1.4,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                       Material(
                                         color: Colors.transparent,
@@ -829,7 +935,7 @@ class _PostCardState extends State<PostCard> {
                                               color: Colors.black,
                                             ),
                                             title: const Text(
-                                              'Quản lý bảng feed',
+                                              'Manage your Feed',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight:

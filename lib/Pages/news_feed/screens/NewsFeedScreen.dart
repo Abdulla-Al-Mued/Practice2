@@ -743,12 +743,15 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                         borderRadius: BorderRadius.circular(20),
                         color: colorNewPost,
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.symmetric(
                           horizontal: 20,
                           vertical: 10,
                         ),
-                        child: Text('Bạn đang nghĩ gì?'),
+                        child: GestureDetector(
+                          onTap: (){},
+                            child: Text("What's on your mind?")
+                        ),
                       ),
                     ),
                   ),
