@@ -45,6 +45,7 @@ class _PostContentState extends State<PostContent> {
         child: widget.text.length == first.length
             ? Text(
           first,
+          textAlign: TextAlign.justify,
           style: TextStyle(
             color: widget.textColor ?? Colors.black,
             fontSize: 15,
@@ -52,11 +53,13 @@ class _PostContentState extends State<PostContent> {
         )
             : !expand
             ? RichText(
+          textAlign: TextAlign.justify,
           text: TextSpan(
               text: "$first...",
               style: TextStyle(
                 fontSize: 15,
                 color: widget.textColor ?? Colors.black,
+
               ),
               children: [
                 WidgetSpan(
@@ -68,6 +71,7 @@ class _PostContentState extends State<PostContent> {
                       },
                       child: Text(
                         'See more',
+                        textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: widget.textColor ?? Colors.black54,
                           fontSize: 15,
@@ -78,6 +82,7 @@ class _PostContentState extends State<PostContent> {
         )
             : Text(
           widget.text,
+          textAlign: TextAlign.justify,
           style: TextStyle(
             color: widget.textColor ?? Colors.black,
             fontSize: 15,

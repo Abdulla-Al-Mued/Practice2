@@ -91,6 +91,7 @@ class _PostCardState extends State<PostCard> {
   _calculateImageDimension() async {
     Completer<Size> completer = Completer();
     Image image = Image.asset(widget.post.image![0]);
+   // Image image = Image.network(widget.post.image![0]);
     image.image.resolve(const ImageConfiguration()).addListener(
       ImageStreamListener(
             (ImageInfo image, bool synchronousCall) {
@@ -143,7 +144,8 @@ class _PostCardState extends State<PostCard> {
                     child: CircleAvatar(
                       radius: 20,
                       backgroundImage:
-                      AssetImage(widget.post.user.avater),
+                        NetworkImage(widget.post.user.avater)
+                    //  AssetImage(widget.post.user.avater),
                     ),
                   ),
                   Padding(
@@ -244,715 +246,728 @@ class _PostCardState extends State<PostCard> {
                               ),
                               color: Colors.grey[300],
                             ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment:
-                              CrossAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  height: 5,
-                                ),
-                                Container(
-                                  height: 4,
-                                  width: 40,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius:
-                                    BorderRadius.circular(20),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.center,
+                                children: [
+                                  const SizedBox(
+                                    height: 5,
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
+                                  Container(
+                                    height: 4,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey,
+                                      shape: BoxShape.rectangle,
+                                      borderRadius:
+                                      BorderRadius.circular(20),
+                                    ),
                                   ),
-                                  child: Column(
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            bottomLeft:
-                                            Radius.circular(10),
-                                            bottomRight:
-                                            Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child:  ListTile(
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            tileColor: Colors.white,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                bottomLeft:
-                                                Radius.circular(10),
-                                                bottomRight:
-                                                Radius.circular(10),
-                                              ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 10,
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10),
+                                              bottomLeft:
+                                              Radius.circular(10),
+                                              bottomRight:
+                                              Radius.circular(10),
                                             ),
-                                            minLeadingWidth: 10,
-                                            leading: Icon(
-                                              Icons.remove_circle,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Text(
-                                              "You're friends with ${widget.post.user.name}",
-                                              style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 14,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          onTap: () {},
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            topLeft: Radius.circular(10),
-                                            topRight: Radius.circular(10),
-                                          ),
-                                          child: const ListTile(
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            tileColor: Colors.white,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                topLeft:
-                                                Radius.circular(10),
-                                                topRight:
-                                                Radius.circular(10),
-                                              ),
-                                            ),
-                                            minLeadingWidth: 10,
-                                            leading: Icon(
-                                              Icons.add_circle_rounded,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  'Show more',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 5,
-                                                ),
-                                                Text(
-                                                  'More of your post will be like this.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            bottomLeft:
-                                            Radius.circular(10),
-                                            bottomRight:
-                                            Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child: const ListTile(
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            tileColor: Colors.white,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                bottomLeft:
-                                                Radius.circular(10),
-                                                bottomRight:
-                                                Radius.circular(10),
-                                              ),
-                                            ),
-                                            minLeadingWidth: 10,
-                                            leading: Icon(
-                                              Icons.remove_circle,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  'Show less',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 5,
-                                                ),
-                                                Text(
-                                                  'Fewer of your posts will be like this.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            topLeft: Radius.circular(10),
-                                            topRight: Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child: const ListTile(
-                                            tileColor: Colors.white,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                topLeft:
-                                                Radius.circular(10),
-                                                topRight:
-                                                Radius.circular(10),
-                                              ),
-                                            ),
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: Padding(
-                                              padding:
-                                              EdgeInsets.symmetric(
-                                                horizontal: 2.5,
-                                              ),
-                                              child: ImageIcon(
-                                                AssetImage(
-                                                    'assets/images/save-fill.png'),
-                                                size: 25,
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  'Save post ',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 5,
-                                                ),
-                                                Text(
-                                                  'Add this to your saved items.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          onTap: () {},
-                                          child: ListTile(
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            leading: Container(
-                                              padding: const EdgeInsets
-                                                  .symmetric(
-                                                horizontal: 5,
-                                                vertical: 2,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: Colors.black,
-                                                shape: BoxShape.rectangle,
+                                            onTap: () {},
+                                            child:  ListTile(
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              tileColor: Colors.white,
+                                              shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                BorderRadius.circular(
-                                                    10),
+                                                BorderRadius.only(
+                                                  bottomLeft:
+                                                  Radius.circular(10),
+                                                  bottomRight:
+                                                  Radius.circular(10),
+                                                  topLeft: 
+                                                    Radius.circular(10),
+                                                  topRight: 
+                                                    Radius.circular(10)
+                                                ),
                                               ),
-                                              child: const Icon(
-                                                Icons.close,
-                                                size: 20,
-                                                color: Colors.white,
+                                              minLeadingWidth: 10,
+
+                                              title: Text(
+                                                "You're friends with ${widget.post.user.name}",
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 16,
+                                                ),
                                               ),
-                                            ),
-                                            title: const Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  'Hide post',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 5,
-                                                ),
-                                                Text(
-                                                  'See fewer posts like this.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                  ),
-                                                ),
-                                              ],
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          onTap: () {},
-                                          child: ListTile(
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: const Icon(
-                                              Icons.feedback_rounded,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                const Text(
-                                                  'Report post',
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
-                                                Text(
-                                                  " We won't let ${widget.post.user.name} know who reported this.",
-                                                  style: const TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
+                                        const SizedBox(
+                                          height: 10,
                                         ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          onTap: () {},
-                                          child: const ListTile(
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            leading: ImageIcon(
-                                              AssetImage(
-                                                  'assets/images/noti-fill.png'),
-                                              color: Colors.black,
-                                              size: 30,
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: () {},
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10),
                                             ),
-                                            title: Text(
-                                              'Turn on notifications for this post',
-                                              style: TextStyle(
+                                            child: const ListTile(
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              tileColor: Colors.white,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  topLeft:
+                                                  Radius.circular(10),
+                                                  topRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              minLeadingWidth: 10,
+                                              leading: Icon(
+                                                Icons.add_circle_rounded,
+                                                size: 30,
                                                 color: Colors.black,
-                                                fontWeight:
-                                                FontWeight.w500,
-                                                fontSize: 16,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    'Show more',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    'More of your post will be like this.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            bottomLeft:
-                                            Radius.circular(10),
-                                            bottomRight:
-                                            Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child: const ListTile(
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                bottomLeft:
-                                                Radius.circular(10),
-                                                bottomRight:
-                                                Radius.circular(10),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              bottomLeft:
+                                              Radius.circular(10),
+                                              bottomRight:
+                                              Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: const ListTile(
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              tileColor: Colors.white,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  bottomLeft:
+                                                  Radius.circular(10),
+                                                  bottomRight:
+                                                  Radius.circular(10),
+                                                ),
                                               ),
-                                            ),
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            leading: Icon(
-                                              Icons.file_copy_rounded,
-                                              color: Colors.black,
-                                              size: 30,
-                                            ),
-                                            title: Text(
-                                              'Copy link',
-                                              style: TextStyle(
+                                              minLeadingWidth: 10,
+                                              leading: Icon(
+                                                Icons.remove_circle,
+                                                size: 30,
                                                 color: Colors.black,
-                                                fontWeight:
-                                                FontWeight.w500,
-                                                fontSize: 16,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    'Show less',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    'Fewer of your posts will be like this.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            topLeft: Radius.circular(10),
-                                            topRight: Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child: ListTile(
-                                            shape:
-                                            const RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                topLeft:
-                                                Radius.circular(10),
-                                                topRight:
-                                                Radius.circular(10),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: const ListTile(
+                                              tileColor: Colors.white,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  topLeft:
+                                                  Radius.circular(10),
+                                                  topRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: Padding(
+                                                padding:
+                                                EdgeInsets.symmetric(
+                                                  horizontal: 2.5,
+                                                ),
+                                                child: ImageIcon(
+                                                  AssetImage(
+                                                      'assets/images/save-fill.png'),
+                                                  size: 25,
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    'Save post ',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    'Add this to your saved items.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: const Icon(
-                                              Icons.star_rounded,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  "Add ${widget.post.user.name} to Favourites",
-                                                  style: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
-                                                const Text(
-                                                  'Priorities her posts in News Feed.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          onTap: () {},
-                                          child: ListTile(
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: const Icon(
-                                              Icons.access_time_filled,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  "Snooze ${widget.post.user.name} for 30 days",
-                                                  style: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              leading: Container(
+                                                padding: const EdgeInsets
+                                                    .symmetric(
+                                                  horizontal: 5,
+                                                  vertical: 2,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: Colors.black,
+                                                  shape: BoxShape.rectangle,
+                                                  borderRadius:
+                                                  BorderRadius.circular(
+                                                      10),
+                                                ),
+                                                child: const Icon(
+                                                  Icons.close,
+                                                  size: 20,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                              title: const Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    'Hide post',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
                                                   ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
-                                                const Text(
-                                                  'Temporarily stop seeing posts.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                    height: 1.4,
+                                                  SizedBox(
+                                                    height: 5,
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            bottomLeft:
-                                            Radius.circular(10),
-                                            bottomRight:
-                                            Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child: ListTile(
-                                            shape:
-                                            const RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                bottomLeft:
-                                                Radius.circular(10),
-                                                bottomRight:
-                                                Radius.circular(10),
+                                                  Text(
+                                                    'See fewer posts like this.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: const ImageIcon(
-                                              AssetImage(
-                                                  'assets/images/unfollow.png'),
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  "Unfollow ${widget.post.user.name}",
-                                                  style: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
-                                                const Text(
-                                                  'Stop seeing post but stay friends.',
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          const BorderRadius.only(
-                                            bottomLeft:
-                                            Radius.circular(10),
-                                            bottomRight:
-                                            Radius.circular(10),
-                                          ),
-                                          onTap: () {},
-                                          child: ListTile(
-                                            shape:
-                                            const RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.only(
-                                                bottomLeft:
-                                                Radius.circular(10),
-                                                bottomRight:
-                                                Radius.circular(10),
-                                              ),
-                                            ),
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: Icon(
-                                              Icons.person_remove_alt_1,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text(
-                                                  "Block ${widget.post.user.name}'s profile",
-                                                  style: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    fontSize: 16,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 5,
-                                                ),
-                                                const Text(
-                                                  "You won't be able to see or contact each other",
-                                                  style: TextStyle(
-                                                    color: Colors.black54,
-                                                    fontSize: 14,
-                                                    height: 1.4,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          borderRadius:
-                                          BorderRadius.circular(10),
-                                          onTap: () {},
-                                          child: ListTile(
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.circular(
-                                                  10),
-                                            ),
-                                            tileColor: Colors.white,
-                                            minLeadingWidth: 10,
-                                            titleAlignment:
-                                            ListTileTitleAlignment
-                                                .center,
-                                            leading: const Icon(
-                                              Icons.view_list_rounded,
-                                              size: 30,
-                                              color: Colors.black,
-                                            ),
-                                            title: const Text(
-                                              'Manage your Feed',
-                                              style: TextStyle(
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: const Icon(
+                                                Icons.feedback_rounded,
+                                                size: 30,
                                                 color: Colors.black,
-                                                fontWeight:
-                                                FontWeight.w500,
-                                                fontSize: 16,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  const Text(
+                                                    'Report post',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    "We won't let ${widget.post.user.name} know who reported this.",
+                                                    style: const TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                      height: 1.4,
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: const ListTile(
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              leading: ImageIcon(
+                                                AssetImage(
+                                                    'assets/images/noti-fill.png'),
+                                                color: Colors.black,
+                                                size: 30,
+                                              ),
+                                              title: Text(
+                                                'Turn on notifications for this post',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight:
+                                                  FontWeight.w500,
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              bottomLeft:
+                                              Radius.circular(10),
+                                              bottomRight:
+                                              Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: const ListTile(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  bottomLeft:
+                                                  Radius.circular(10),
+                                                  bottomRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              leading: Icon(
+                                                Icons.file_copy_rounded,
+                                                color: Colors.black,
+                                                size: 30,
+                                              ),
+                                              title: Text(
+                                                'Copy link',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight:
+                                                  FontWeight.w500,
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              topLeft: Radius.circular(10),
+                                              topRight: Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: ListTile(
+                                              shape:
+                                              const RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  topLeft:
+                                                  Radius.circular(10),
+                                                  topRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: const Icon(
+                                                Icons.star_rounded,
+                                                size: 30,
+                                                color: Colors.black,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    "Add ${widget.post.user.name} to Favourites",
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  const Text(
+                                                    'Priorities her posts in News Feed.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                      height: 1.4,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: ListTile(
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: const Icon(
+                                                Icons.access_time_filled,
+                                                size: 30,
+                                                color: Colors.black,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    "Snooze ${widget.post.user.name} for 30 days",
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  const Text(
+                                                    'Temporarily stop seeing posts.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                      height: 1.4,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              bottomLeft:
+                                              Radius.circular(10),
+                                              bottomRight:
+                                              Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: ListTile(
+                                              shape:
+                                              const RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  bottomLeft:
+                                                  Radius.circular(10),
+                                                  bottomRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: const ImageIcon(
+                                                AssetImage(
+                                                    'assets/images/unfollow.png'),
+                                                size: 30,
+                                                color: Colors.black,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    "Unfollow ${widget.post.user.name}",
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  const Text(
+                                                    'Stop seeing post but stay friends.',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                      height: 1.4,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            const BorderRadius.only(
+                                              topLeft:
+                                              Radius.circular(10),
+                                              topRight:
+                                              Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: ListTile(
+                                              shape:
+                                              const RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  topLeft:
+                                                  Radius.circular(10),
+                                                  topRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: Icon(
+                                                Icons.person_remove_alt_1,
+                                                size: 30,
+                                                color: Colors.black,
+                                              ),
+                                              title: Column(
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .start,
+                                                children: [
+                                                  Text(
+                                                    "Block ${widget.post.user.name}'s profile",
+                                                    style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      fontSize: 16,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  const Text(
+                                                    "You won't be able to see or contact each other",
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 14,
+                                                      height: 1.4,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            borderRadius:
+                                            BorderRadius.only(
+                                              bottomLeft:
+                                              Radius.circular(10),
+                                              bottomRight:
+                                              Radius.circular(10),
+                                            ),
+                                            onTap: () {},
+                                            child: ListTile(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                BorderRadius.only(
+                                                  bottomLeft:
+                                                  Radius.circular(10),
+                                                  bottomRight:
+                                                  Radius.circular(10),
+                                                ),
+                                              ),
+                                              tileColor: Colors.white,
+                                              minLeadingWidth: 10,
+                                              titleAlignment:
+                                              ListTileTitleAlignment
+                                                  .center,
+                                              leading: const Icon(
+                                                Icons.view_list_rounded,
+                                                size: 30,
+                                                color: Colors.black,
+                                              ),
+                                              title: const Text(
+                                                'Manage your Feed',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight:
+                                                  FontWeight.w500,
+                                                  fontSize: 16,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                              ],
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -1920,7 +1935,7 @@ class _PostCardState extends State<PostCard> {
                 width: 5,
               ),
               Text(
-                'Đã ẩn',
+                'Hidden',
                 style: TextStyle(
                   color: Colors.black54,
                   fontSize: 14,
@@ -1935,7 +1950,7 @@ class _PostCardState extends State<PostCard> {
             children: [
               const Expanded(
                 child: Text(
-                  'Việc ẩn bài viết giúp Facebook cá nhân hóa Bảng feed của bạn.',
+                  'Hiding posts helps Jogajug personalise your Feed.',
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
@@ -1960,7 +1975,7 @@ class _PostCardState extends State<PostCard> {
                   shadowColor: Colors.transparent,
                 ),
                 child: const Text(
-                  'Hoàn tác',
+                  'Undo',
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.black,
@@ -1996,7 +2011,7 @@ class _PostCardState extends State<PostCard> {
                 width: 10,
               ),
               Text(
-                'Tạm ẩn ${widget.post.user.name} trong 30 ngày',
+                'Snooze ${widget.post.user.name} for 30 days',
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 15,
@@ -2017,7 +2032,7 @@ class _PostCardState extends State<PostCard> {
                 width: 10,
               ),
               Text(
-                'Báo cáo bài viết',
+                'Report post',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 15,
@@ -2040,7 +2055,7 @@ class _PostCardState extends State<PostCard> {
                 width: 10,
               ),
               Text(
-                'Quản lý Bảng feed',
+                'Manage your Feed',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 15,

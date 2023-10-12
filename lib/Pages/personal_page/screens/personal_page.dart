@@ -417,8 +417,7 @@ class _PersonalPageScreenState extends State<PersonalPageScreen> {
                                       size: 16,
                                     ),
                                     SizedBox(
-                                      width: 5,
-                                    ),
+                                      width: 5,),
                                     Text(
                                       'Thêm vào tin',
                                       style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jogajug/constants/variables.dart';
 import 'package:jogajug/provider/user_provider.dart';
+import 'package:jogajug/router.dart';
 import 'package:provider/provider.dart';
 
 import 'Pages/home/screens/HomePage.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Variables.iconColor),
         ),
       ),
-      //onGenerateRoute: (settings)=> generateRoute(settings),
+      onGenerateRoute: (settings)=> generateRoute(settings),
       home:  HomePage(),
     );
   }

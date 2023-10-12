@@ -7,6 +7,7 @@ import 'package:jogajug/Pages/notifications/screens/NotificationsScreen.dart';
 import 'package:jogajug/Pages/watch/screens/WatchScreen.dart';
 import 'package:jogajug/constants/variables.dart';
 
+import '../../friends/screens/friends_screen.dart';
 import '../widgets/home_app_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,9 +24,12 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
   ScrollController scrollController=ScrollController();
   late final list=<Widget>[
     NewsFeedScreen(parentScrollController: scrollController,),
-    WatchScreen(),
+    WatchScreen(
+      key: Key('watch-screen'),
+    ),
     MarketPlaceScreen(),
-    DatingScreen(),
+    FriendsScreen(),
+    //DatingScreen(),
     NotificationsScreen(),
     MenuScreen(),
 

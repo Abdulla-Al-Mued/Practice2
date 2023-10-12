@@ -4,7 +4,7 @@ import 'package:jogajug/constants/variables.dart';
 import 'package:video_player/video_player.dart';
 
 import '../../../models/story.dart';
-import 'StoryDetails.dart';
+import 'story_details.dart';
 
 class StoryCard extends StatefulWidget {
   final Story story;
