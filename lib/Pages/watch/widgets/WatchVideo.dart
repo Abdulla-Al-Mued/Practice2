@@ -176,7 +176,8 @@ class _WatchVideoState extends State<WatchVideo> {
                             ),
                           ),
                           SizedBox(
-                            width: 115,
+                            width: 150,
+                          //  height: 200,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -408,7 +409,7 @@ class _WatchVideoState extends State<WatchVideo> {
                   children: [
                     widget.post.comment != null
                         ? Text(
-                      '${widget.post.comment} bình luận',
+                      '${widget.post.comment} comments',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -432,7 +433,7 @@ class _WatchVideoState extends State<WatchVideo> {
                         : const SizedBox(),
                     widget.post.share != null
                         ? Text(
-                      '${widget.post.share} lượt chia sẻ',
+                      '${widget.post.share} shares',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -478,7 +479,7 @@ class _WatchVideoState extends State<WatchVideo> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          'Thích',
+                          'Like',
                           style: TextStyle(
                             fontSize: 15,
                             color: widget.isDarkMode == true
@@ -512,7 +513,7 @@ class _WatchVideoState extends State<WatchVideo> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          'Bình luận',
+                          'Comment',
                           style: TextStyle(
                             fontSize: 15,
                             color: widget.isDarkMode == true
@@ -546,7 +547,7 @@ class _WatchVideoState extends State<WatchVideo> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          'Chia sẻ',
+                          'Share',
                           style: TextStyle(
                             fontSize: 15,
                             color: widget.isDarkMode == true

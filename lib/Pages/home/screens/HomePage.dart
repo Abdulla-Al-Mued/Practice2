@@ -30,7 +30,9 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
     MarketPlaceScreen(),
     FriendsScreen(),
     //DatingScreen(),
-    NotificationsScreen(),
+    NotificationsScreen(
+      key: Key('notifications-screen'),
+    ),
     MenuScreen(),
 
   ];

@@ -27,10 +27,10 @@ class _WatchScreenState extends State<WatchScreen> {
   List<VideoControllerWrapper> videoController = [];
   final posts = [
     Post(
-      user: User(name: 'Aki Michio', avater: 'assets/images/user/aki.jpg'),
-      time: '14 thg 7, 2022',
+      user: User(name: 'Homiyo Chan', avater: 'assets/images/user/aki.jpg'),
+      time: '15 October, 2023',
       shareWith: 'public',
-      content: 'Kawaiii quá vậy\nAnime : Con của mẹ kế là bạn gái cũ',
+      content: "#CuteFunnyCat\nCute cats are undeniably popular and beloved creatures. They're known for their endearing qualities, charming behaviors, and adorable appearances.",
       like: 15000,
       angry: 3,
       comment: 210,
@@ -40,7 +40,7 @@ class _WatchScreenState extends State<WatchScreen> {
       sad: 36,
       share: 98,
       wow: 18,
-      video: ['assets/videos/Haven Official Blessing_Ep-01.mp4'],
+      video: ['assets/videos/v1.mp4'],
      // video: ['https://www.bilibili.tv/en/video/2018963546'],
     ),
     // Post(
@@ -230,7 +230,7 @@ class _WatchScreenState extends State<WatchScreen> {
                                 )
                                     : const BoxDecoration(),
                                 child: Text(
-                                  'Dành cho bạn',
+                                  'For you',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: index == 0
@@ -263,7 +263,7 @@ class _WatchScreenState extends State<WatchScreen> {
                                 )
                                     : const BoxDecoration(),
                                 child: Text(
-                                  'Trực tiếp',
+                                  'Live',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: index == 1
@@ -296,7 +296,7 @@ class _WatchScreenState extends State<WatchScreen> {
                                 )
                                     : const BoxDecoration(),
                                 child: Text(
-                                  'Chơi game',
+                                  'Gaming',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: index == 2
@@ -329,7 +329,7 @@ class _WatchScreenState extends State<WatchScreen> {
                                 )
                                     : const BoxDecoration(),
                                 child: Text(
-                                  'Reels',
+                                  'Following',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: index == 3
@@ -362,7 +362,7 @@ class _WatchScreenState extends State<WatchScreen> {
                                 )
                                     : const BoxDecoration(),
                                 child: Text(
-                                  'Đang theo dõi',
+                                  'Reels',
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: index == 4
