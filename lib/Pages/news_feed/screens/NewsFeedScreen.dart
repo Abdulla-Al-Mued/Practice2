@@ -744,131 +744,153 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
         NewsFeedScreen.offset = scrollController.offset;
       }
     });
-    return SingleChildScrollView(
-      controller: scrollController,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    right: 10,
+    return Scaffold(
+      body: SingleChildScrollView(
+        controller: scrollController,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      right: 10,
+                    ),
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage(user.avater),
+                      radius: 20,
+                    ),
                   ),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage(user.avater),
-                    radius: 20,
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(20),
-                    onTap: () {
-                      setState(() {
-                        colorNewPost = Colors.transparent;
-                      });
-                    },
-                    onTapUp: (tapUpDetails) {
-                      setState(() {
-                        colorNewPost = Colors.black12;
-                      });
-                    },
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        border: Border.all(
-                          color: Colors.black12,
-                          style: BorderStyle.solid,
+                  Expanded(
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(20),
+                      onTap: () {
+                        setState(() {
+                          colorNewPost = Colors.transparent;
+                        });
+                      },
+                      onTapUp: (tapUpDetails) {
+                        setState(() {
+                          colorNewPost = Colors.black12;
+                        });
+                      },
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          border: Border.all(
+                            color: Colors.black12,
+                            style: BorderStyle.solid,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                          color: colorNewPost,
                         ),
-                        borderRadius: BorderRadius.circular(20),
-                        color: colorNewPost,
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
-                        ),
-                        child: GestureDetector(
-                          onTap: (){},
-                            child: Text("What's on your mind?")
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10,
+                          ),
+                          child: GestureDetector(
+                            onTap: (){},
+                              child: Text("What's on your mind?")
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                IconButton(
-                  splashRadius: 20,
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.image,
-                    color: Colors.green,
-                    size: 20,
+                  IconButton(
+                    splashRadius: 20,
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.image,
+                      color: Colors.green,
+                      size: 20,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 5,
+              color: Colors.black26,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 5,
+                    ),
+                    child: AddStoryCard(),
+                  ),
+                  ...stories
+                      .map((e) => Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 5,
+                    ),
+                    child: StoryCard(story: e),
+                  ))
+                      .toList()
+                ]),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              width: double.infinity,
+              height: 5,
+              color: Colors.black26,
+            ),
+            Column(
+              children: posts
+                  .map((e) => Column(
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  PostCard(post: e),
+                  Container(
+                    width: double.infinity,
+                    height: 5,
+                    color: Colors.black26,
+                  ),
+                ],
+              ))
+                  .toList(),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: SizedBox(
+        height: 34,
+
+        child: FloatingActionButton(
+          onPressed: (){},
+          backgroundColor: Colors.white,
+          child: IconButton(
+            splashRadius: 18,
+            padding: const EdgeInsets.all(0),
+            onPressed: () {},
+            icon:
+            //Icon(Icons.message,color: Colors.black,size: 23,)
+            const ImageIcon(
+              AssetImage('assets/images/message.png'),
+              size: 30,
+              color: Color(0xFF98703C),
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: 5,
-            color: Colors.black26,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-            ),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 5,
-                  ),
-                  child: AddStoryCard(),
-                ),
-                ...stories
-                    .map((e) => Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 5,
-                  ),
-                  child: StoryCard(story: e),
-                ))
-                    .toList()
-              ]),
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Container(
-            width: double.infinity,
-            height: 5,
-            color: Colors.black26,
-          ),
-          Column(
-            children: posts
-                .map((e) => Column(
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                PostCard(post: e),
-                Container(
-                  width: double.infinity,
-                  height: 5,
-                  color: Colors.black26,
-                ),
-              ],
-            ))
-                .toList(),
-          ),
-        ],
+        ),
       ),
     );
   }

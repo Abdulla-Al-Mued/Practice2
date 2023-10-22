@@ -32,107 +32,110 @@ class _StoryCardState extends State<StoryCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 180,
-      padding: const EdgeInsets.all(0),
-      decoration: (widget.story.image != null && widget.story.image!.isNotEmpty)
-          ? BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: Colors.black12,
-          width: 1,
-        ),
-        image: DecorationImage(
-          image: AssetImage(
-            widget.story.image![0],
+    return SizedBox(
+      height: 120,
+      child: Container(
+        width: 110,
+        height: 120,
+        padding: const EdgeInsets.all(0),
+        decoration: (widget.story.image != null && widget.story.image!.isNotEmpty)
+            ? BoxDecoration(
+          shape: BoxShape.circle,
+          //borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: Colors.black12,
+            width: 1,
           ),
-          fit: BoxFit.cover,
+          image: DecorationImage(
+            image: AssetImage(
+              widget.story.image![0],
+            ),
+            fit: BoxFit.cover,
+          ),
+        )
+            : BoxDecoration(
+          shape: BoxShape.circle,
+         // borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: Colors.black12,
+            width: 1,
+          ),
         ),
-      )
-          : BoxDecoration(
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: Colors.black12,
-          width: 1,
-        ),
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: Stack(
-          children: [
-            if (widget.story.image == null ||
-                (widget.story.image != null && widget.story.image!.isEmpty))
-              ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: VideoPlayer(controller)),
-            InkWell(
-              borderRadius: BorderRadius.circular(10),
-              onTap: () {
-                Navigator.pushNamed(context, StoryDetails.routeName,
-                    arguments: widget.story);
-              },
-              child: SizedBox(
-                width: 100,
-                height: 180,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    if (widget.hidden != true)
-                      Container(
-                        margin: const EdgeInsets.only(
-                          left: 5,
-                          top: 5,
-                        ),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Variables.secondaryColor,
-                            width: 3,
+        child: Material(
+          color: Colors.transparent,
+          child: Stack(
+            children: [
+              if (widget.story.image == null ||
+                  (widget.story.image != null && widget.story.image!.isEmpty))
+                ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: VideoPlayer(controller)),
+              InkWell(
+                borderRadius: BorderRadius.circular(10),
+                onTap: () {
+                  Navigator.pushNamed(context, StoryDetails.routeName,
+                      arguments: widget.story);
+                },
+                child: SizedBox(
+                  width: 100,
+                  height: 180,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      if (widget.hidden != true)
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 5,
+                            top: 5,
                           ),
-                        ),
-                        child: Container(
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: Colors.transparent,
-                              width: 1.5,
+                              color: Variables.secondaryColor,
+                              width: 3,
                             ),
                           ),
-                          child: CircleAvatar(
-                            radius: 15,
-                            backgroundImage: AssetImage(
-                              widget.story.user.avater,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.transparent,
+                                width: 1.5,
+                              ),
+                            ),
+                            child: CircleAvatar(
+                              radius: 15,
+                              backgroundImage: AssetImage(
+                                widget.story.user.avater,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    if (widget.hidden != true)
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 5,
-                          bottom: 5,
-                        ),
-                        child: Text(
-                          widget.story.user.name,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
+                      if (widget.hidden != true)
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 5,
+                            bottom: 5,
+                          ),
+                          child: Text(
+                            widget.story.user.name,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
