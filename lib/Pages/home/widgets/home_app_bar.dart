@@ -16,15 +16,16 @@ class _HomeAppBarState extends State<HomeAppBar> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: const Text(
-            'jogajug',
-            style: TextStyle(
-              color: Color(0xFF98703C),
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          padding: const EdgeInsets.all(10),
+          child: Image.asset("assets/images/jogajog logo.png",height: 50,width: 50,),
+          // const Text(
+          //   'jogajug',
+          //   style: TextStyle(
+          //     color: Color(0xFF98703C),
+          //     fontSize: 28,
+          //     fontWeight: FontWeight.bold,
+          //   ),
+          // ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
