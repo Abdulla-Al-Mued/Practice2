@@ -95,8 +95,12 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                               children: [
                                 Center(
                                   child: Tab(
-                                    child: index != 0 ? Image.asset('assets/images/nav/home.png',width: 30,height: 30,color: Variables.primaryColor,):
-                                        Image.asset('assets/images/nav/home-active.png',width: 30,height: 30,color: Variables.primaryColor,),
+                                    child: index != 0 ? Image.asset('assets/images/nav/home.j.png',width: 38,height: 38,
+                                     // color: Variables.primaryColor,
+                                    ):
+                                        Image.asset('assets/images/nav/home.j.png',width: 38,height: 38,
+                                         // color: Variables.primaryColor,
+                                        ),
                                   ),
                                 ),
                                 if(index==0)
@@ -131,16 +135,16 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                       child: Tab(
                                         child: index != 1
                                             ? Image.asset(
-                                          'assets/images/nav/watch.png',
-                                          width: 30,
-                                          height: 30,
-                                            color: Variables.primaryColor
+                                          'assets/images/nav/video.j.png',
+                                          width: 38,
+                                          height: 38,
+                                           // color: Variables.primaryColor
                                         )
                                             : Image.asset(
-                                          'assets/images/nav/watch-active.png',
-                                          width: 30,
-                                          height: 30,
-                                            color: Variables.primaryColor
+                                          'assets/images/nav/video.j.png',
+                                          width: 38,
+                                          height: 38,
+                                           // color: Variables.primaryColor
                                         ),
                                       ),
                                     ),
@@ -176,17 +180,17 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                     child: Tab(
                                       child: index != 2
                                           ? Image.asset(
-                                        'assets/images/nav/marketplace.png',
-                                        width: 30,
-                                        height: 30,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/market.j.png',
+                                        width: 34,
+                                        height: 34,
+                                          //color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
-                                        'assets/images/nav/marketplace-active.png',
-                                        width: 30,
-                                        height: 30,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/market.j.png',
+                                        width: 34,
+                                        height: 34,
+                                         // color: Variables.primaryColor
 
                                       ),
                                     ),
@@ -230,17 +234,17 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                     child: Tab(
                                       child: index != 3
                                           ? Image.asset(
-                                        'assets/images/nav/friends.png',
-                                        width: 30,
-                                        height: 30,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/friends.j.png',
+                                        width: 38,
+                                        height: 38,
+                                        //  color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
-                                        'assets/images/nav/friends-active.png',
-                                        width: 30,
-                                        height: 30,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/friends.j.png',
+                                        width: 38,
+                                        height: 38,
+                                         // color: Variables.primaryColor
 
                                       ),
                                     ),
@@ -284,17 +288,17 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                     child: Tab(
                                       child: index != 4
                                           ? Image.asset(
-                                        'assets/images/nav/notifica.png',
-                                        width: 30,
-                                        height: 30,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/notification.j.png',
+                                        width: 38,
+                                        height: 38,
+                                         // color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
-                                        'assets/images/nav/notifica-active.png',
-                                        width: 30,
-                                        height: 30,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/notification.j.png',
+                                        width: 38,
+                                        height: 38,
+                                         // color: Variables.primaryColor
 
                                       ),
                                     ),
@@ -338,17 +342,17 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                     child: Tab(
                                       child: index != 5
                                           ? Image.asset(
-                                        'assets/images/nav/menu.png',
-                                        width: 24,
-                                        height: 24,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/menu.j.png',
+                                        width: 30,
+                                        height: 30,
+                                          //color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
-                                        'assets/images/nav/menu-active.png',
-                                        width: 24,
-                                        height: 24,
-                                          color: Variables.primaryColor
+                                        'assets/images/nav/menu.j.png',
+                                        width: 30,
+                                        height: 30,
+                                         // color: Variables.primaryColor
 
                                       ),
                                     ),

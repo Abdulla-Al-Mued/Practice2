@@ -33,7 +33,7 @@ class _StoryCardState extends State<StoryCard> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120,
+      height: 136,
       child: Container(
         width: 110,
         height: 120,
@@ -117,16 +117,18 @@ class _StoryCardState extends State<StoryCard> {
                         Padding(
                           padding: const EdgeInsets.only(
                             left: 5,
-                            bottom: 5,
+
                           ),
-                          child: Text(
-                            widget.story.user.name,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
+                          child: Center(
+                            child: Text(
+                              widget.story.user.name,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
                         ),

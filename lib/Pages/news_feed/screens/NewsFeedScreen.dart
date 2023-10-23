@@ -20,7 +20,7 @@ class NewsFeedScreen extends StatefulWidget {
 }
 
 class _NewsFeedScreenState extends State<NewsFeedScreen> {
-  Color colorNewPost = Colors.transparent;
+  Color colorNewPost = Color(0xFFF8EDC6);
   final stories = [
     Story(
       user: User(
@@ -766,9 +766,10 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                   Expanded(
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20),
+                      splashColor: Colors.blueGrey,
                       onTap: () {
                         setState(() {
-                          colorNewPost = Colors.transparent;
+                          colorNewPost = Color(0xFFF8EDC6);
                         });
                       },
                       onTapUp: (tapUpDetails) {
@@ -813,13 +814,14 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
             ),
             Container(
               width: double.infinity,
-              height: 5,
-              color: Colors.black26,
+              height: 1,
+              color: Colors.black12,
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
             Container(
+              color: Color(0xFFF8EDC6),
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,
@@ -844,13 +846,13 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                 ]),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // const SizedBox(
+            //   height: 10,
+            // ),
             Container(
               width: double.infinity,
-              height: 5,
-              color: Colors.black26,
+              height: 1,
+              color: Colors.black12,
             ),
             Column(
               children: posts

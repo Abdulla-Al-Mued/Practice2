@@ -11,56 +11,55 @@ class AddStoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context).user;
-    return Container(
-      height: 110,width: 115,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-      ),
-      child: InkWell(
-        onTap: (){},
-        child: Stack(
-          children: [
-            ClipOval(
-              child: Image.asset(user.avater,
-                fit: BoxFit.cover, // Choose the appropriate fit option
-              ),
-            ),
-            Positioned(
-              width: 50,
-              child:  DecoratedBox(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Variables.secondaryColor,
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 2,
+    return SizedBox(
+      height: 136,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10,),
+        child: Container(
+          height: 108,width: 113,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+          ),
+          child: InkWell(
+            onTap: (){},
+            child: Stack(
+              children: [
+                ClipOval(
+                  child: Image.asset(user.avater,
+                    fit: BoxFit.cover, // Choose the appropriate fit option
                   ),
                 ),
-                child: Icon(
-                Icons.add_rounded,
-                color: Colors.white,
-                  size: 36,
+                Positioned(
+                  width: 50,
+                  child:  DecoratedBox(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Variables.secondaryColor,
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 2,
+                      ),
+                    ),
+                    child: Icon(
+                    Icons.add_rounded,
+                    color: Colors.white,
+                      size: 36,
+                ),
+                  ),),
+                Positioned(
+                  top: 109,left: 20,
+                  child: Container(
+                  alignment: Alignment.bottomCenter,
+                  child: const Text(
+                    'Create Story',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),)
+              ],
             ),
-              ),),
-            // Positioned(
-            //   top: 100,left: 25,
-            //   child: Container(
-            //   alignment: Alignment.bottomCenter,
-            //   padding: const EdgeInsets.only(
-            //     bottom: 5,
-            //   ),
-            //   decoration: const BoxDecoration(
-            //     color: Colors.white70,
-            //     shape: BoxShape.circle, // Set the container to a circular shape
-            //   ),
-            //   child: const Text(
-            //     'Create Story',
-            //     style: TextStyle(color: Colors.black),
-            //   ),
-            // ),)
-          ],
+          )
         ),
-      )
+      ),
     );
   }
 }

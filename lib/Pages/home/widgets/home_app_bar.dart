@@ -16,44 +16,65 @@ class _HomeAppBarState extends State<HomeAppBar> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.all(10),
-          child: Image.asset("assets/images/jogajog logo.png",height: 50,width: 50,),
-          // const Text(
-          //   'jogajug',
-          //   style: TextStyle(
-          //     color: Color(0xFF98703C),
-          //     fontSize: 28,
-          //     fontWeight: FontWeight.bold,
-          //   ),
-          // ),
+          padding: const EdgeInsets.only(left: 10,top: 10,bottom: 10),
+          child: Row(
+            children: [
+              Image.asset("assets/images/jogajog logo.png",height: 50,width: 50,),
+              Text(
+                'jogajug',
+                style: TextStyle(
+                  color: Color(0xFFDCB945),
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+
         ),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 10),
-              child: Container(
-                alignment: Alignment.center,
-                width: 35,
-                height: 35,
-                padding: const EdgeInsets.all(0),
-                margin: const EdgeInsets.symmetric(horizontal: 5),
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.black12,
-                ),
-                child: IconButton(
-                  splashRadius: 18,
-                  padding: const EdgeInsets.all(0),
-                  onPressed: () {},
-                  icon:
-                  //Icon(Icons.search,color: Colors.black,size: 22,)
-                  const ImageIcon(
+              child: InkWell(
+                onTap: (){},
+                child: Container(
+                  alignment: Alignment.centerRight,
+                  width: 125,
+                  height: 27,
+                  padding: const EdgeInsets.all(4),
+                  margin: const EdgeInsets.symmetric(horizontal: 5),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    border: Border.all(
+                      color: Colors.black12,
+                      style: BorderStyle.solid,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  //  color: colorNewPost,
+                  ),
+                  child:ImageIcon(
                     AssetImage('assets/images/search.png'),
                     size: 22,
                     color: Colors.black,
                   ),
+
+                  // IconButton(
+                  //   alignment: Alignment.centerRight,
+                  //   splashRadius: 18,
+                  //   padding: const EdgeInsets.all(0),
+                  //   onPressed: () {},
+                  //   icon:
+                  //   //Icon(Icons.search,color: Colors.black,size: 22,)
+                  //   const ImageIcon(
+                  //     AssetImage('assets/images/search.png'),
+                  //     size: 22,
+                  //     color: Colors.black,
+                  //   ),
+                  // ),
                 ),
               ),
             ),
