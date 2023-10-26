@@ -218,7 +218,7 @@ class _FriendsScreenState extends State<FriendsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Friends',
                     style: TextStyle(
                       fontSize: 26,

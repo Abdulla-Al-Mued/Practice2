@@ -20,7 +20,7 @@ class NewsFeedScreen extends StatefulWidget {
 }
 
 class _NewsFeedScreenState extends State<NewsFeedScreen> {
-  Color colorNewPost = Color(0xFFF8EDC6);
+  Color colorNewPost = const Color(0xFFF8EDC6);
   final stories = [
     Story(
       user: User(
@@ -769,7 +769,7 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                       splashColor: Colors.blueGrey,
                       onTap: () {
                         setState(() {
-                          colorNewPost = Color(0xFFF8EDC6);
+                          colorNewPost = const Color(0xFFF8EDC6);
                         });
                       },
                       onTapUp: (tapUpDetails) {
@@ -788,13 +788,13 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                           color: colorNewPost,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 10,
                           ),
                           child: GestureDetector(
                             onTap: (){},
-                              child: Text("What's on your mind?")
+                              child: const Text("What's on your mind?")
                           ),
                         ),
                       ),
@@ -821,7 +821,7 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
             //   height: 10,
             // ),
             Container(
-              color: Color(0xFFF8EDC6),
+              color: const Color(0xFFF8EDC6),
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,

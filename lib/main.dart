@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
       title: 'Jogajug',
       theme: ThemeData(
         scaffoldBackgroundColor: Variables.backgroundColor,
-        colorScheme: ColorScheme.light(primary: Variables.backgroundColor),
+        colorScheme: const ColorScheme.light(primary: Variables.backgroundColor),
         appBarTheme: const AppBarTheme(
           elevation: 0,
           iconTheme: IconThemeData(color: Variables.iconColor),
         ),
       ),
       onGenerateRoute: (settings)=> generateRoute(settings),
-      home:  HomePage(),
+      home:  const HomePage(),
     );
   }
 }

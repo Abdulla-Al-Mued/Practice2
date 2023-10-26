@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jogajug/Pages/friends/screens/friends_screen.dart';
 import 'package:jogajug/Pages/home/screens/HomePage.dart';
@@ -10,7 +9,7 @@ import 'package:jogajug/models/story.dart';
 Route<dynamic> generateRoute(RouteSettings routeSettings){
   switch(routeSettings.name){
     case HomePage.routeName:
-      return MaterialPageRoute(builder: (context)=> HomePage(),
+      return MaterialPageRoute(builder: (context)=> const HomePage(),
       );
 
 
@@ -23,7 +22,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings){
     case FriendsScreen.routeName:
       return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation)=>
-      FriendsScreen(),
+      const FriendsScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child){
            const begin= Offset(1.0, 0.0);
            const end= Offset.zero;
@@ -39,7 +38,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings){
 
 
     default:
-      return MaterialPageRoute(builder: (context)=>Scaffold(
+      return MaterialPageRoute(builder: (context)=>const Scaffold(
         body: Center(
           child: Text('404: Not Found'),
         ),

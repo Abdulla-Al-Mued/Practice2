@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:jogajug/constants/variables.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +16,7 @@ class AddStoryCard extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10,),
         child: Container(
           height: 108,width: 113,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
           ),
           child: InkWell(
@@ -40,7 +39,7 @@ class AddStoryCard extends StatelessWidget {
                         width: 2,
                       ),
                     ),
-                    child: Icon(
+                    child: const Icon(
                     Icons.add_rounded,
                     color: Colors.white,
                       size: 36,

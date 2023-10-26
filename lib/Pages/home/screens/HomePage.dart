@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jogajug/Pages/dating/screens/DatingScreen.dart';
 import 'package:jogajug/Pages/market_place/screens/MarketPlaceScreen.dart';
 import 'package:jogajug/Pages/menu/screens/MenuScreen.dart';
 import 'package:jogajug/Pages/news_feed/screens/NewsFeedScreen.dart';
@@ -24,16 +23,16 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
   ScrollController scrollController=ScrollController();
   late final list=<Widget>[
     NewsFeedScreen(parentScrollController: scrollController,),
-    WatchScreen(
+    const WatchScreen(
       key: Key('watch-screen'),
     ),
-    MarketPlaceScreen(),
-    FriendsScreen(),
+    const MarketPlaceScreen(),
+    const FriendsScreen(),
     //DatingScreen(),
-    NotificationsScreen(
+    const NotificationsScreen(
       key: Key('notifications-screen'),
     ),
-    MenuScreen(),
+    const MenuScreen(),
 
   ];
   @override
@@ -70,13 +69,13 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                 curve: Curves.linearToEaseOut,
                 height: (index>0) ? 0 : 60,
                 duration: Duration(milliseconds: index==0 ? 500 : 300),
-                child: HomeAppBar(),
+                child: const HomeAppBar(),
               ),
               floating: true,
               snap: index==0,
               pinned: true,
               bottom: PreferredSize(
-                preferredSize: Size.fromHeight(46),
+                preferredSize: const Size.fromHeight(46),
                 child: Column(
                   children: [
                     SizedBox(
@@ -107,7 +106,7 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                   Positioned(
                                     bottom: 0,
                                       child: Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(horizontal: 5),
                                         child: Container(
                                           width: MediaQuery.of(context).size.width/6-10,
                                           height: 3,
@@ -152,7 +151,7 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                       Positioned(
                                           bottom: 0,
                                           child: Padding(
-                                            padding: EdgeInsets.symmetric(horizontal: 5),
+                                            padding: const EdgeInsets.symmetric(horizontal: 5),
                                             child: Container(
                                               width: MediaQuery.of(context).size.width/6-10,
                                               height: 3,
@@ -385,7 +384,7 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                         ],
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       color: Colors.black12,
                       height: 0,
                     )

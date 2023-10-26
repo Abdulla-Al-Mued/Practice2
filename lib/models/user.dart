@@ -67,7 +67,7 @@ class User{
 }) {
     return User(
       name: name ?? this.name,
-      avater: avatar ?? this.avater,
+      avater: avatar ?? avater,
       verified: verified ?? this.verified,
       cover: cover ?? this.cover,
       friends: friends ?? this.friends,

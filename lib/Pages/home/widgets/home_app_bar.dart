@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jogajug/constants/variables.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({super.key});
@@ -20,7 +19,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
           child: Row(
             children: [
               Image.asset("assets/images/jogajog logo.png",height: 50,width: 50,),
-              Text(
+              const Text(
                 'jogajug',
                 style: TextStyle(
                   color: Color(0xFFDCB945),
@@ -56,7 +55,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     borderRadius: BorderRadius.circular(20),
                   //  color: colorNewPost,
                   ),
-                  child:ImageIcon(
+                  child:const ImageIcon(
                     AssetImage('assets/images/search.png'),
                     size: 22,
                     color: Colors.black,

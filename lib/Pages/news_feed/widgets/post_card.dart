@@ -293,7 +293,7 @@ class _PostCardState extends State<PostCard> {
                                               ListTileTitleAlignment
                                                   .center,
                                               tileColor: Colors.white,
-                                              shape: RoundedRectangleBorder(
+                                              shape: const RoundedRectangleBorder(
                                                 borderRadius:
                                                 BorderRadius.only(
                                                   bottomLeft:
@@ -310,7 +310,7 @@ class _PostCardState extends State<PostCard> {
 
                                               title: Text(
                                                 "You're friends with ${widget.post.user.name}",
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
                                                 ),
@@ -882,7 +882,7 @@ class _PostCardState extends State<PostCard> {
                                               titleAlignment:
                                               ListTileTitleAlignment
                                                   .center,
-                                              leading: Icon(
+                                              leading: const Icon(
                                                 Icons.person_remove_alt_1,
                                                 size: 30,
                                                 color: Colors.black,
@@ -921,14 +921,14 @@ class _PostCardState extends State<PostCard> {
                                           color: Colors.transparent,
                                           child: InkWell(
                                             borderRadius:
-                                            BorderRadius.only(
+                                            const BorderRadius.only(
                                               bottomLeft:
                                               Radius.circular(10),
                                               bottomRight:
                                               Radius.circular(10),
                                             ),
                                             onTap: () {},
-                                            child: ListTile(
+                                            child: const ListTile(
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                 BorderRadius.only(
@@ -943,12 +943,12 @@ class _PostCardState extends State<PostCard> {
                                               titleAlignment:
                                               ListTileTitleAlignment
                                                   .center,
-                                              leading: const Icon(
+                                              leading: Icon(
                                                 Icons.view_list_rounded,
                                                 size: 30,
                                                 color: Colors.black,
                                               ),
-                                              title: const Text(
+                                              title: Text(
                                                 'Manage your Feed',
                                                 style: TextStyle(
                                                   color: Colors.black,

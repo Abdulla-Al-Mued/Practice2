@@ -10,6 +10,6 @@ class DatingScreen extends StatefulWidget {
 class _DatingScreenState extends State<DatingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }
