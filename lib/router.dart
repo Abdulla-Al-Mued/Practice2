@@ -6,6 +6,9 @@ import 'package:jogajug/Pages/home/screens/HomePage.dart';
 import 'package:jogajug/Pages/news_feed/widgets/story_details.dart';
 import 'package:jogajug/models/story.dart';
 
+import 'Pages/news_feed/screens/image_fullscreen.dart';
+import 'models/post.dart';
+
 Route<dynamic> generateRoute(RouteSettings routeSettings){
   switch(routeSettings.name){
     case HomePage.routeName:
@@ -35,7 +38,21 @@ Route<dynamic> generateRoute(RouteSettings routeSettings){
 
         }
       );
-
+    case ImageFullScreen.routeName:
+      final Post post = routeSettings.arguments as Post;
+      return PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            ImageFullScreen(
+              post: post,
+            ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
+      );
 
     default:
       return MaterialPageRoute(builder: (context)=>const Scaffold(

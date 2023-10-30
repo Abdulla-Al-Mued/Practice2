@@ -777,24 +777,27 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                           colorNewPost = Colors.black12;
                         });
                       },
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          border: Border.all(
-                            color: Colors.black12,
-                            style: BorderStyle.solid,
+                      child: Container(
+                        height: 50,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Colors.black12,
+                              style: BorderStyle.solid,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                            color: colorNewPost,
                           ),
-                          borderRadius: BorderRadius.circular(20),
-                          color: colorNewPost,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 10,
-                          ),
-                          child: GestureDetector(
-                            onTap: (){},
-                              child: const Text("What's on your mind?")
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 20,
+                              vertical: 17,
+                            ),
+                            child: GestureDetector(
+                              onTap: (){},
+                                child: const Text("What's on your mind?")
+                            ),
                           ),
                         ),
                       ),
@@ -875,7 +878,7 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
         ),
       ),
       floatingActionButton: SizedBox(
-        height: 34,
+        height: 50,
 
         child: FloatingActionButton(
           onPressed: (){},

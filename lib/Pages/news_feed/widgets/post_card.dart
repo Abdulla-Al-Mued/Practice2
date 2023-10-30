@@ -159,11 +159,11 @@ class _PostCardState extends State<PostCard> {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushNamed(
-                                    context,
-                                    PersonalPageScreen.routeName,
-                                    arguments: widget.post.user,
-                                  );
+                                  // Navigator.pushNamed(
+                                  //   context,
+                                  //   PersonalPageScreen.routeName,
+                                  //   arguments: widget.post.user,
+                                  // );
                                 },
                                 child: Text(
                                   widget.post.user.name,

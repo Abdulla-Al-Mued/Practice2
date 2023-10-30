@@ -106,11 +106,14 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
           title: Align(
             alignment: Alignment.centerRight,
             child: contentVisible
-                ? const Icon(
+                ? IconButton(
+              onPressed: (){},
+                  icon: Icon(
               Icons.more_vert_rounded,
               color: Colors.white,
               size: 30,
-            )
+            ),
+                )
                 : null,
           ),
         ),
@@ -155,16 +158,16 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 5,
-                            right: 5,
-                          ),
-                          child: PostContent(
-                            text: widget.post.content!,
-                            textColor: Colors.white,
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(
+                        //     left: 5,
+                        //     right: 5,
+                        //   ),
+                        //   child: PostContent(
+                        //     text: widget.post.content!,
+                        //     textColor: Colors.white,
+                        //   ),
+                        // ),
                         Padding(
                           padding: const EdgeInsets.only(
                             left: 15,
@@ -211,7 +214,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                                 width: 5,
                               ),
                               Text(
-                                'NHẮN TIN CHO ${widget.post.user.name.toUpperCase()}',
+                                'MESSAGE ${widget.post.user.name.toUpperCase()}',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 13,
@@ -226,11 +229,11 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        CommentScreen.routeName,
-                        arguments: widget.post,
-                      );
+                      // Navigator.pushNamed(
+                      //   context,
+                      //   CommentScreen.routeName,
+                      //   arguments: widget.post,
+                      // );
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -295,7 +298,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                             children: [
                               widget.post.comment != null
                                   ? Text(
-                                '${widget.post.comment} bình luận',
+                                '${widget.post.comment} comments',
                                 style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -317,7 +320,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                                   : const SizedBox(),
                               widget.post.share != null
                                   ? Text(
-                                '${widget.post.share} lượt chia sẻ',
+                                '${widget.post.share} shares',
                                 style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -363,7 +366,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                               Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Text(
-                                  'Thích',
+                                  'Like',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 15,
@@ -393,7 +396,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                               Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Text(
-                                  'Bình luận',
+                                  'Comment',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 15,
@@ -423,7 +426,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                               Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Text(
-                                  'Chia sẻ',
+                                  'Share',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 15,

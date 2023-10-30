@@ -260,6 +260,7 @@ class _FriendsScreenState extends State<FriendsScreen> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       padding: const EdgeInsets.all(10),
+                      height: 50,
                       child: const Text(
                         'Suggestions',
                         style: TextStyle(
@@ -287,6 +288,7 @@ class _FriendsScreenState extends State<FriendsScreen> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       padding: const EdgeInsets.all(10),
+                      height: 50,
                       child: const Text(
                         'Your Friends',
                         style: TextStyle(

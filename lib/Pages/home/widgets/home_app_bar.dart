@@ -39,7 +39,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: InkWell(
-                onTap: (){},
+                 onTap: (){},
                 child: Container(
                   alignment: Alignment.centerRight,
                   width: 125,
