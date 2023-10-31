@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/post.dart';
-import '../../comment/screens/comment_screen.dart';
-import '../widgets/post_content.dart';
 
 class ImageFullScreen extends StatefulWidget {
   static const String routeName = '/image-fullscreen';
@@ -102,7 +100,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
           title: Align(
             alignment: Alignment.centerRight,
@@ -125,7 +123,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                                   padding: const EdgeInsets.only(left: 10,bottom: 18,top: 16),
                                   child: InkWell(
                                     onTap: (){},
-                                    child: Row(
+                                    child: const Row(
                                       children: [
                                         Icon(Icons.save_alt_outlined,color: Colors.white70,size: 30,),
                                         SizedBox(width: 10,),
@@ -142,7 +140,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                                   padding: const EdgeInsets.only(left: 10,bottom: 18),
                                   child: InkWell(
                                     onTap: (){},
-                                    child: Row(
+                                    child: const Row(
                                       children: [
                                         Icon(Icons.share_outlined,color: Colors.white70,size: 30,),
                                         SizedBox(width: 10,),
@@ -159,7 +157,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                                   padding: const EdgeInsets.only(left: 10,bottom: 18),
                                   child: InkWell(
                                     onTap: (){},
-                                    child: Row(
+                                    child: const Row(
                                       children: [
                                         Icon(Icons.messenger_outline_rounded,color: Colors.white70,size: 30,),
                                         SizedBox(width: 10,),
@@ -176,7 +174,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                                   padding: const EdgeInsets.only(left: 10,bottom: 0),
                                   child: InkWell(
                                     onTap: (){},
-                                    child: Row(
+                                    child: const Row(
                                       children: [
                                         Icon(Icons.report_gmailerrorred_outlined,color: Colors.white70,size: 30,),
                                         SizedBox(width: 10,),
@@ -198,7 +196,7 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
                       });
                 
               },
-                  icon: Icon(
+                  icon: const Icon(
               Icons.more_vert_rounded,
               color: Colors.white,
               size: 30,

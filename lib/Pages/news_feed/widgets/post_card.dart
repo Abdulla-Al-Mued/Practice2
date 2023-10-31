@@ -7,7 +7,6 @@ import 'package:jogajug/constants/variables.dart';
 
 import '../../../models/post.dart';
 import '../../comment/screens/comment_screen.dart';
-import '../../personal_page/screens/personal_page.dart';
 import '../screens/image_fullscreen.dart';
 import '../screens/multiple_images_Post_screen.dart';
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/user.dart';
-import '../../friends/screens/friends_screen.dart';
 import '../widgets/menu_choice.dart';
 import '../widgets/shortcu.dart';
 

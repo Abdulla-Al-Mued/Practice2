@@ -202,7 +202,7 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                           colorNewPost = Colors.black12;
                         });
                       },
-                      child: Container(
+                      child: SizedBox(
                         height: 50,
                         child: InkWell(
                           splashColor: Colors.grey.shade50,
@@ -217,12 +217,12 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
                               borderRadius: BorderRadius.circular(20),
                               color: colorNewPost,
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
                                 horizontal: 20,
                                 vertical: 15,
                               ),
-                              child: const Text("What's on your mind?",style: TextStyle(fontSize: 17),),
+                              child: Text("What's on your mind?",style: TextStyle(fontSize: 17),),
                             ),
                           ),
                         ),

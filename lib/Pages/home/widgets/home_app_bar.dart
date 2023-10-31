@@ -55,7 +55,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     borderRadius: BorderRadius.circular(20),
                   //  color: colorNewPost,
                   ),
-                  child:Row(
+                  child:const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text('Search',style: TextStyle(color: Colors.black54,fontSize: 14,fontWeight: FontWeight.w200,),),
