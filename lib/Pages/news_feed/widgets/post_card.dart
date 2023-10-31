@@ -157,18 +157,11 @@ class _PostCardState extends State<PostCard> {
                           padding: const EdgeInsets.only(bottom: 2),
                           child: Row(
                             children: [
-                              InkWell(
-                                onTap: () {
-                                  // Navigator.pushNamed(
-                                  //   context,
-                                  //   PersonalPageScreen.routeName,
-                                  //   arguments: widget.post.user,
-                                  // );
-                                },
+                              SizedBox(
                                 child: Text(
                                   widget.post.user.name,
                                   style: const TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),

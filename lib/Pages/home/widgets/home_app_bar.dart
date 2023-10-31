@@ -43,7 +43,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                 child: Container(
                   alignment: Alignment.centerRight,
                   width: 125,
-                  height: 27,
+                  height: 30,
                   padding: const EdgeInsets.all(4),
                   margin: const EdgeInsets.symmetric(horizontal: 5),
                   decoration: BoxDecoration(
@@ -55,10 +55,16 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     borderRadius: BorderRadius.circular(20),
                   //  color: colorNewPost,
                   ),
-                  child:const ImageIcon(
-                    AssetImage('assets/images/search.png'),
-                    size: 22,
-                    color: Colors.black,
+                  child:Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text('Search',style: TextStyle(color: Colors.black54,fontSize: 14,fontWeight: FontWeight.w200,),),
+                       ImageIcon(
+                        AssetImage('assets/images/search.png'),
+                        size: 22,
+                        color: Colors.black54,
+                      ),
+                    ],
                   ),
 
                   // IconButton(

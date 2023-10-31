@@ -165,7 +165,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   Row(
                     children: [
                       IconButton(
-                        splashRadius: 20,
+                        splashRadius: 30,
                         onPressed: () {},
                         icon: const ImageIcon(
                           AssetImage('assets/images/menu.png'),
@@ -187,8 +187,8 @@ class _MenuScreenState extends State<MenuScreen> {
                     children: [
                       Container(
                         alignment: Alignment.center,
-                        width: 35,
-                        height: 35,
+                        width: 50,
+                        height: 50,
                         padding: const EdgeInsets.all(0),
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: const BoxDecoration(
@@ -202,14 +202,14 @@ class _MenuScreenState extends State<MenuScreen> {
                           icon: const Icon(
                             Icons.settings_rounded,
                             color: Colors.black,
-                            size: 24,
+                            size: 30,
                           ),
                         ),
                       ),
                       Container(
                         alignment: Alignment.center,
-                        width: 35,
-                        height: 35,
+                        width: 50,
+                        height: 50,
                         padding: const EdgeInsets.all(0),
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: const BoxDecoration(
@@ -223,7 +223,7 @@ class _MenuScreenState extends State<MenuScreen> {
                           icon: const Icon(
                             Icons.search,
                             color: Colors.black,
-                            size: 24,
+                            size: 30,
                           ),
                         ),
                       ),
@@ -851,8 +851,8 @@ class _MenuScreenState extends State<MenuScreen> {
                               child: InkWell(
                                 borderRadius: BorderRadius.circular(10),
                                 onTap: () {
-                                  Navigator.pushNamed(
-                                      context, FriendsScreen.routeName);
+                                  // Navigator.pushNamed(
+                                  //     context, FriendsScreen.routeName);
                                 },
                                 child: const Padding(
                                   padding: EdgeInsets.all(10),

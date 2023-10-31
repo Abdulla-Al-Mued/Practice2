@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                               children: [
                                 Center(
                                   child: Tab(
-                                    child: index != 0 ? Image.asset('assets/images/nav/home.j.png',width: 38,height: 38,
+                                    child: index != 0 ? Image.asset('assets/images/nav/home.j.png',width: 38,height: 50,
                                      // color: Variables.primaryColor,
                                     ):
                                         Image.asset('assets/images/nav/home.j.png',width: 38,height: 38,
@@ -136,13 +136,13 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                             ? Image.asset(
                                           'assets/images/nav/video.j.png',
                                           width: 38,
-                                          height: 38,
+                                          height: 50,
                                            // color: Variables.primaryColor
                                         )
                                             : Image.asset(
                                           'assets/images/nav/video.j.png',
                                           width: 38,
-                                          height: 38,
+                                          height: 50,
                                            // color: Variables.primaryColor
                                         ),
                                       ),
@@ -181,14 +181,14 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                           ? Image.asset(
                                         'assets/images/nav/market.j.png',
                                         width: 34,
-                                        height: 34,
+                                        height: 50,
                                           //color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
                                         'assets/images/nav/market.j.png',
                                         width: 34,
-                                        height: 34,
+                                        height: 50,
                                          // color: Variables.primaryColor
 
                                       ),
@@ -235,14 +235,14 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                           ? Image.asset(
                                         'assets/images/nav/friends.j.png',
                                         width: 38,
-                                        height: 38,
+                                        height: 50,
                                         //  color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
                                         'assets/images/nav/friends.j.png',
                                         width: 38,
-                                        height: 38,
+                                        height: 50,
                                          // color: Variables.primaryColor
 
                                       ),
@@ -289,14 +289,14 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                           ? Image.asset(
                                         'assets/images/nav/notification.j.png',
                                         width: 38,
-                                        height: 38,
+                                        height: 50,
                                          // color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
                                         'assets/images/nav/notification.j.png',
                                         width: 38,
-                                        height: 38,
+                                        height: 50,
                                          // color: Variables.primaryColor
 
                                       ),
@@ -343,14 +343,14 @@ class _HomePageState extends State<HomePage>with SingleTickerProviderStateMixin 
                                           ? Image.asset(
                                         'assets/images/nav/menu.j.png',
                                         width: 30,
-                                        height: 30,
+                                        height: 50,
                                           //color: Variables.primaryColor
 
                                       )
                                           : Image.asset(
                                         'assets/images/nav/menu.j.png',
                                         width: 30,
-                                        height: 30,
+                                        height: 50,
                                          // color: Variables.primaryColor
 
                                       ),

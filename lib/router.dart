@@ -21,7 +21,6 @@ Route<dynamic> generateRoute(RouteSettings routeSettings){
       return PageRouteBuilder(opaque: false,pageBuilder: (_,__,___)=>StoryDetails(story: story),
       );
 
-
     case FriendsScreen.routeName:
       return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation)=>
@@ -34,7 +33,8 @@ Route<dynamic> generateRoute(RouteSettings routeSettings){
            var tween=Tween(begin: begin,end: end).chain(CurveTween(curve: curve));
            return SlideTransition(
                position: animation.drive(tween),
-           child: child,);
+           child: child,
+           );
 
         }
       );

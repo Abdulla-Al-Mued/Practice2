@@ -101,13 +101,103 @@ class _ImageFullScreenState extends State<ImageFullScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: true,
+          iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
           title: Align(
             alignment: Alignment.centerRight,
             child: contentVisible
                 ? IconButton(
-              onPressed: (){},
+                  onPressed: (){
+                  showModalBottomSheet(
+                      isScrollControlled: true,
+                      context: context,
+                      builder: (BuildContext context){
+                        return Container(
+                          height: MediaQuery.of(context).size.height*0.3,
+                          color: Colors.black87,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10,bottom: 18,top: 16),
+                                  child: InkWell(
+                                    onTap: (){},
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.save_alt_outlined,color: Colors.white70,size: 30,),
+                                        SizedBox(width: 10,),
+                                        Text('Save to phone',style: TextStyle(
+                                          color: Colors.white70,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400
+                                        ),)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10,bottom: 18),
+                                  child: InkWell(
+                                    onTap: (){},
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.share_outlined,color: Colors.white70,size: 30,),
+                                        SizedBox(width: 10,),
+                                        Text('Share external',style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400
+                                        ),)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10,bottom: 18),
+                                  child: InkWell(
+                                    onTap: (){},
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.messenger_outline_rounded,color: Colors.white70,size: 30,),
+                                        SizedBox(width: 10,),
+                                        Text('Send in Messenger',style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400
+                                        ),)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10,bottom: 0),
+                                  child: InkWell(
+                                    onTap: (){},
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.report_gmailerrorred_outlined,color: Colors.white70,size: 30,),
+                                        SizedBox(width: 10,),
+                                        Text('Report photo',style: TextStyle(
+                                            color: Colors.white70,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400
+                                        ),)
+                                      ],
+                                    ),
+                                  ),
+                                )
+
+
+                              ],
+                            ),
+                          ),
+                        );
+                      });
+                
+              },
                   icon: Icon(
               Icons.more_vert_rounded,
               color: Colors.white,
